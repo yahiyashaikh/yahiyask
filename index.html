@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
+    <title>Yahiya Shaikh - Web Developer & Designer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /* General body text */
+            line-height: 1.6;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    overflow: hidden;
+    padding: 2rem;
+    border: 2px solid #3498db; /* Optional border for better definition */
+}
+
+/* Styling for the header section */
+header {
+    background: linear-gradient(135deg, #3498db, #8e44ad); /* Attractive gradient */
+    color: #fff;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    border-bottom: 5px solid #fff;
+}
+
+header h1 {
+    font-size: 2.8rem; /* Larger heading size */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    animation: slideInFromRight 1s ease-out; /* Slide-in animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for depth */
+}
+
+header p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Image shadow */
+}
+
+/* Add hover effect on profile picture */
+.profile-pic:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    transition: transform 0.3s ease;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+        /* Apply the Montserrat font to headings */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: slideInFromRight 1s ease-out;
+        }
+
+        nav {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav button {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.25rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav button.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #education {
+    margin-bottom: 2rem;
+}
+
+/* Education Section Styling */
+#education {
+    padding: 2rem;
+    background: #f0f5f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#education h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* Education Container */
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+/* Education Items */
+.education-item {
+    flex: 1 1 calc(33% - 1.5rem);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effects */
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Item Title and Content */
+.education-item h3 {
+    margin-bottom: 0.5rem;
+    color: #3498db;
+    font-size: 1.25rem;
+}
+
+.education-item p {
+    margin: 0.25rem 0;
+    color: #555;
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    .education-item {
+        flex: 1 1 calc(50% - 1.5rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .education-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Achievements Section */
+#achievements {
+    background: #f7f8fc;
+}
+
+.achievements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.achievement-item {
+    flex: 1 1 calc(33% - 1.5rem);
+    background-color: #ffffff;
+    border: 1px solid #e1e5e8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-item h3 {
+    margin-bottom: 0.5rem;
+    color: #e67e22;
+    font-size: 1.25rem;
+}
+
+.achievement-item p {
+    margin: 0.25rem 0;
+    color: #555;
+}
+/* Certificates Section */
+#certificates {
+    background: #f2f4f7;
+}
+
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.certificate-item {
+    flex: 1 1 calc(33% - 1.5rem);
+    background-color: #ffffff;
+    border: 1px solid #dce1e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-item h3 {
+    margin-bottom: 0.5rem;
+    color: #2ecc71;
+    font-size: 1.25rem;
+}
+
+.certificate-item p {
+    margin: 0.25rem 0;
+    color: #555;
+}
+.certificate-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.certificate-link:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+    .achievement-item, .certificate-item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .achievement-item, .certificate-item {
+        flex: 1 1 100%;
+    }
+}
+
+
+
+        /* Skills Section Layout */
+        .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-category {
+    margin-bottom: 20px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.skill-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.skill-bar-container {
+    flex-grow: 1;
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.skill-bar {
+    height: 10px;
+    width: 0;
+    background: linear-gradient(to right, #4caf50, #ffeb3b); /* Gradient from green to yellow */
+    border-radius: 5px;
+    position: relative;
+    transition: width 1s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skill-bar-container::before {
+    content: '';
+    display: block;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.skill-percentage {
+    position: absolute;
+    right: 0;
+    top: -25px; /* Adjust top to position above the bar */
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Make text bold */
+    color: #333; /* Dark text color for contrast */
+    background: #f5f5f5; /* Light background color for readability */
+    padding: 2px 6px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners for the background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+    text-align: center; /* Center text inside the background */
+    z-index: 2; /* Ensure it appears above the bar */
+}
+
+.skill-bar[data-percentage] {
+    width: var(--percentage);
+    transition: width 1s ease-in-out;
+}
+
+
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Stack the containers vertically on small screens */
+    }
+
+    .skills-category {
+        margin: 1rem 0;
+    }
+}
+
+       /* Projects Section Styling */
+/* Projects Section Styling */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Center content */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+    margin-bottom: 1rem;
+}
+
+
+.project-buttons {
+    font-size: smaller;
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.project-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.demo-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.demo-button:hover {
+    background-color: #2980b9;
+}
+
+.github-button {
+    background-color: #333;
+    color: white;
+}
+
+.github-button:hover {
+    background-color: #555;
+}
+      
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .social-logo {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .container {
+                margin: 1rem;
+            }
+
+            header {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav button {
+                width: 100%;
+                margin: 0.25rem 0;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .profile-pic {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .download-cv-button {
+            font-family: 'Montserrat', sans-serif;
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .download-cv-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+            /* Lift button on hover */
+        }
+
+        /* Button entrance animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="images/p pic.jpeg" alt="MOHAMMAD YAHIYA SHAIKH" class="profile-pic">
+            <h1>MOHAMMAD YAHIYA SHAIKH</h1>
+            <p>Web Developer & Designer</p>
+        </header>
+        <nav>
+            <button class="active" data-section="about">About Me</button>
+            <button data-section="education">Education</button>
+            <button data-section="achievements">Achievement</button>
+            <button data-section="certificates">Certificates</button>
+            <button data-section="skills">Skills</button>
+            <button data-section="projects">Projects</button>
+            <button data-section="contact">Contact</button>
+        </nav>
+        <main>
+            <section id="about" class="active">
+                <h2>About Me</h2>
+                <p>I'm a passionate web developer with a keen eye for design and a love for creating seamless user
+                    experiences. With years of experience in front-end and back-end development, I bring ideas to life
+                    through clean, efficient code and intuitive interfaces.</p>
+                <!-- Download CV Button -->
+                <a href="images/Yahiya smart CV final.pdf" download="Yahiya_CV.pdf" class="download-cv-button">Download CV 📲</a>
+            </section>
+
+            <hr>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="education-container">
+                    <div class="education-item">
+                        <h3>Master in Cimputer Application</h3>
+                        <p>Techno India University : Kolkata</p>
+                        <p>Graduation Year: Persuing</p>
+                        
+                    </div>
+                    <div class="education-item">
+                        <h3>Bachelor of Science in Information Technology</h3>
+                        <p>Universtiy of Mumbai</p>
+                        <p>Graduation Year: 2024</p>
+                        <p>(CGPA :9.00)</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>12th</h3>
+                        <p>Mumbai Univerdity</p>
+                        <p>Completion Year: 2020</p>
+                        <p>Percentage: 72%</p>
+                    </div>
+                </div>
+            </section>
+            
+            </section>
+            <hr>
+            <section id="achievements">
+                <h2>Achievements</h2>
+                <div class="achievements-container">
+                <div class="achievement-item">
+                    <h3>	Volunteer Head of Zeal 2024</h3>
+                    <p>■	As the Volunteer Head of Zeal 2024, the inter-college fest at Guru Nanak College, I led the Volunteer team in organizing and managing the event. </p>
+                    <a href="images/zeal.jpeg" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="achievement-item">
+                    <h3>	Director of Rotary Club of Chembur 2024</h3>
+                    <p>■	As the  Director of Rotary club we contributing to the wellness of the  society
+                        ■	We run the beach Cleaning Drive .
+                        ■	We helped the Orphanage at Dadar.
+                        </p>
+                        <a href="images/Rotract.jpeg" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+                </div>
+            </section>
+            
+            <section id="certificates">
+                <h2>Certificates</h2>
+                <div class="certificates-container">
+                <div class="certificate-item">
+                    <h3>Introduction to java Script</h3>
+                    <p>Completed the Java Script Certification Program at Sololearn, 2024.</p>
+                    <a href="images/javascript.jpeg" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate-item">
+                    <h3>Java Certification</h3>
+                    <p>Achieved certification in  Java from Skill UP, 2023.</p>
+                    <a href="images/java certificate.pdf" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate-item">
+                    <h3>Python Certification</h3>
+                    <p>Achieved certification in  Python from Skill UP, 2023.</p>
+                    <a href="images/python certificate.pdf" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certificate-item">
+                    <h3>IOT Certification</h3>
+                    <p>Achieved certification in IOT from Great Learning, 2023.</p>
+                    <a href="images/iot certificate.jpeg" class="certificate-link" target="_blank">View Certificate</a>
+                </div>
+            </div>
+            </section>
+            
+            <hr>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <!-- Frontend Technologies Container -->
+                    <div class="skills-category">
+                        <h3>Frontend Technologies</h3>
+                        <ul class="skills-list">
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="HTML5" class="skill-logo">
+                                HTML5
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="90"></div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS3" class="skill-logo">
+                                CSS3
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="80"></div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" alt="JavaScript" class="skill-logo">
+                                JavaScript (ES6+)
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="85"></div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React" class="skill-logo">
+                                React.js
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="75"></div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Backend Technologies Container -->
+                    <div class="skills-category">
+                        <h3>Backend Technologies</h3>
+                        <ul class="skills-list">
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" class="skill-logo">
+                                Node.js
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="70"></div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                            </li>
+                           
+                            
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="MongoDB" class="skill-logo">
+                                MongoDB
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="65"></div>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://cdn.worldvectorlogo.com/logos/postgresql.svg" alt="PostgreSQL" class="skill-logo">
+                                PostgreSQL
+                                <div class="skill-bar-container">
+                                    <div class="skill-bar" data-percentage="55"></div>
+                                    <span class="skill-percentage">55%</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+            <hr>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <img src="images/Login.png" alt="Coupon99" class="project-image">
+                        <h3>Coupon99.com</h3>
+                        <p>Built a full-stack online store using the MERN stack.</p>
+                        <div class="project-buttons">
+                            <a href="https://iam-hamidansari.github.io/Coupons99/index.html" class="project-button demo-button">Live Demo</a>
+                            <a href="#" class="project-button github-button">GitHub Repo</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/tmsprocess.png" alt="Weather App" class="project-image">
+                        <h3>Data Management System of Transport</h3>
+                        <p>Designed and implemented a java based console Application for managing the data abd track the transportation,Integrating PostgresSQL and JDBC.</p>
+                        <div class="project-buttons">
+                            <a href="#" class="project-button demo-button">Live Demo</a>
+                            <a href="https://github.com/yahiyashaikh/Attendance-Manager/commits?author=yahiyashaikh" class="project-button github-button">GitHub Repo</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/Screenshot 2024-09-18 174540.png" alt="Task Management Tool" class="project-image">
+                        <h3>Personal-Portfolio</h3>
+                        <p>Created a Personal Portfolio using the front End Technologies.</p>
+                        <div class="project-buttons">
+                            <a href="https://yahiyashaikh.github.io/YahiyaPortfolio/" class="project-button demo-button">Live Demo</a>
+                            <a href="https://github.com/yahiyashaikh/portfolio" class="project-button github-button">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <hr>
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <p>Email: yahiyaofficial786@.com</p>
+                <p>Phone: (+91) 9769234225</p>
+                <div class="social-links">
+                    <a href="https://github.com/yahiyashaikh" class="social-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+                            alt="GitHub" class="social-logo">
+                        GitHub
+                    </a>
+                    <a href="https://www.instagram.com/sk_yahiya786?igsh=MWhjazMwN2UxZDBkag==" class="social-link"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                            alt="Instagram" class="social-logo">
+                        Instagram
+                    </a>
+                    <a href="https://www.linkedin.com/in/shaikh-yahiya-8912bb263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn"
+                            class="social-logo">
+                        LinkedIn
+                    </a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Shaikh Yahiya. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('nav button');
+    const sections = document.querySelectorAll('main section');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const sectionId = button.getAttribute('data-section');
+            const section = document.getElementById(sectionId);
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer for section animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('nav button');
+            const sections = document.querySelectorAll('main section');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const sectionId = button.getAttribute('data-section');
+
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    sections.forEach(section => {
+                        if (section.id === sectionId) {
+                            section.classList.add('active');
+                            section.style.animation = 'slideInFromLeft 0.5s ease-out forwards';
+                        } else {
+                            section.classList.remove('active');
+                            section.style.animation = '';
+                        }
+                    });
+                });
+            });
+
+            // Intersection Observer for section animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const skillBars = document.querySelectorAll('.skill-bar');
+
+    skillBars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        bar.style.width = percentage + '%';
+    });
+});
+
+    </script>
+</body>
+
+</html>
